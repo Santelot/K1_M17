@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .banner .title {
+            font-size: 1.2em;
+            display: flex;
+            justify-content: space-between;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 5px;
+            border-top: 1px solid white;
+            padding-top: 5px;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        .step-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        .dialogue {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: right;
+            font-style: italic;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .dropdown select {
+            font-size: 1em;
+            padding: 5px;
+            margin-left: 10px;
+        }
+        table { width: 100%; border-collapse: collapse; }
+        td { padding: 8px; border: 1px solid #ddd; vertical-align: top; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Playbook - K1 - M17</h1>
+
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateContent()">
+                <option value="50">50 minutos</option>
+                <option value="40">40 minutos</option>
+                <option value="30">30 minutos</option>
+            </select>
+        </div>
+
+        <div class="dropdown">
+            <label for="class-level">Nivel:</label>
+            <select id="class-level" onchange="updateContent()">
+                <option value="K1">K1</option>
+                <option value="K2">K2</option>
+                <option value="K3">K3</option>
+            </select>
+        </div>
+
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+        <h2 id="selected-level" class="level-title">Nivel: K1</h2>
+
+        <!-- ............................................Aquí empezarán las actividades........................................... -->
+
+<!-- Actividad 0 -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_materiales')">
+        <div class="title">📚 Actividad 0: Revisión de Materiales ⏰ Tiempo: N/A</div>
+        <div class="subtitle">Asegúrate de tener listos todos los materiales indicados en la DIAPOSITIVA 1 antes de iniciar la misión.</div>
+    </div>
+    <div id="revision_materiales" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (N/A):</strong> Asegúrate de tener listos todos los materiales indicados en la Diapositiva 1 antes de iniciar la misión.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 1 -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('bienvenida')">
+        <div class="title">🎉 Actividad 1: Bienvenida e Introducción ⏰ Tiempo: 1 minuto</div>
+        <div class="subtitle">Dar la bienvenida a los niños, presentar el enfoque del día y preparar sus mentes para la actividad.</div>
+    </div>
+    <div id="bienvenida" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Reproduce la Diapositiva 2 “Bienvenida” y saluda a los niños mientras muestras el logo de Gnius Club, luego introduce el tema del día y la necesidad de entrenar el cerebro para la misión.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Hola, Genios CODE SQUAD! Bienvenidos al Castillo de Cristal. Hoy tenemos una misión muy especial. La Reina Clara necesita nuestra ayuda para restaurar el camino mágico de mosaicos que lleva a su cocina. ¡Pero no podemos empezar sin antes preparar nuestros cerebros! En el siguiente paso, haremos un ejercicio especial para activar nuestras mentes y estar listos para el desafío. ¡Vamos a empezar esta gran aventura juntos!"</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (0.5 minutos):</strong> Reproduce la Diapositiva 3 "Gimnasio CODE SQUAD" e introduce la importancia de entrenar el cerebro antes de enfrentar el reto del día.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Muy bien, Genios! Ahora que estamos en el Castillo de Cristal, necesitamos activar nuestros cerebros con un ejercicio especial de patrones. En este gimnasio del CODE SQUAD, usaremos una canción para aprender a identificar patrones y estar súper listos para ayudar a la Reina Clara. ¡Pongan mucha atención a la canción porque nos dará todas las pistas! Al final, estaremos listos para enfrentarnos al reto de hoy. ¡Empecemos!"</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 2 -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('baile-secuenciacion')">
+        <div class="title">🎶 Actividad 2: Baile de Algoritmos ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Preparar a los niños para la misión con un ejercicio de algoritmos a través de un baile.</div>
+    </div>
+    <div id="baile-secuenciacion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la Diapositiva 4 “Baile de Algoritmos” e introduce la canción que seguiremos hoy.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Ahora que hemos activado nuestras mentes, ¡es momento de movernos! Vamos a hacer un baile especial de algoritmos. Sigan las instrucciones de la canción: escuchen bien, observen los movimientos, ¡y diviértanse mientras aprendemos! Recuerden, no importa si al principio es difícil, con práctica siempre mejora. ¡Prepárense y vamos a bailar!"</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 3 -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('planteamiento-problema')">
+        <div class="title">🔮 Actividad 3: Planteamiento del Problema ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Introducir a los niños en el contexto de la misión utilizando la historia.</div>
+    </div>
+    <div id="planteamiento-problema" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (1 minuto):</strong> Reproduce la DIAPOSITIVA 5, adopta la actitud de cuenta cuentos y narra la historia.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                "¡Genios del CODE SQUAD! Hoy hemos llegado al Castillo de Cristal, un lugar mágico en lo alto de una montaña. Este castillo tiene pisos maravillosos decorados con mosaicos mágicos: flores, rombos, corazones, copos de nieve y cruces, que brillan con la luz del sol. La Reina Clara, que vive aquí, hornea deliciosos pasteles mágicos en su cocina secreta. Pero, ¡oh no! Un viento fuerte desordenó los mosaicos del camino que lleva a la cocina. La reina necesita nuestra ayuda para restaurar el camino y evitar las trampas de vapor que bloquean el paso. ¿Listos para empezar esta gran misión?"
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Reproduce la DIAPOSITIVA 6 y explica el reto para motivar al CODE SQUAD.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                "¡Genios del CODE SQUAD! La Reina Clara no puede llegar a su cocina porque el viento desordenó los mosaicos mágicos del camino. Si pisa el lugar equivocado, activará trampas de vapor que bloquearán el paso. Necesitamos usar nuestras habilidades para restaurar el patrón correcto. Cada mosaico tiene un propósito: las flores representan la belleza del castillo, los rombos dan equilibrio, los corazones muestran la bondad de la reina, los copos de nieve aportan frescura, y las cruces marcan las intersecciones. Con la ayuda de Dart, vamos a reproducir el patrón original y guiar a la Reina Clara a su cocina. ¡Manos a la obra, CODE SQUAD!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4 -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('formacion-parejas')">
+        <div class="title">🤝 Actividad 4: Formación de Parejas ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Explicar la importancia del trabajo en equipo en parejas y asegurar la organización.</div>
+    </div>
+    <div id="formacion-parejas" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la DIAPOSITIVA 7 “Formación de Equipos”, explica la importancia de trabajar en equipo y junta a los niños en pares. Si el número es impar, integra un trío para asegurar que todos tengan compañeros.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                "¡Genios del CODE SQUAD! Cuando trabajamos juntos, ¡podemos lograr cosas asombrosas! Como dice un sabio refrán: 'Dos cabezas piensan mejor que una'. Cuando comparten ideas con sus compañeros, crean soluciones más inteligentes y divertidas. ¡Es como si cada uno de ustedes fuera una pieza de un gran mosaico! Y cuando juntamos todas las piezas, creamos algo maravilloso. Ahora, para nuestra misión de hoy, vamos a formar parejas. Busquen a un compañero y juntos serán un gran equipo CODE SQUAD. Si hay un número impar, ¡no se preocupen! Yo los ayudaré a organizar equipos para que nadie quede solo. ¡A trabajar juntos, genios!"
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Verifica que todos los niños estén emparejados y organizados para trabajar.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                "¿Todos tienen ya a su compañero? ¡Perfecto! Ahora que están en parejas, recuerden que trabajar en equipo significa compartir, ayudarse y aprender juntos. ¿Qué creen que pasa si uno de ustedes tiene una idea genial y el otro la mejora? ¡Se convierte en una idea brillante! Así que prepárense, porque juntos serán un equipo invencible para completar esta misión. ¡Listos para ayudar a la Reina Clara y su castillo mágico!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5 -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('codigo_visual')">
+        <div class="title">🎨 Actividad 5: Reto de Codificación ⏰ Tiempo: Variable <span id="activity-5-total-time">Variable según el nivel</span></div>
+        <div class="subtitle">Introducir los retos de codificación según la edad y trabajar con fichas de ruta.</div>
+    </div>
+    <div id="codigo_visual" class="content">
+        <table id="activity-5-content">
+            <!-- Contenido insertado dinámicamente por JavaScript -->
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 6 -->
+<div id="activity-6" class="activity">
+    <div class="banner" onclick="toggleContent('intercambio_construccion')">
+        <div class="title">🔄 Actividad 6: Intercambio de Códigos y Construcción ⏰ Tiempo: Variable <span id="activity-6-total-time">Variable según el nivel</span></div>
+        <div class="subtitle">Intercambio de códigos entre equipos y práctica de programación con fichas de ruta.</div>
+    </div>
+    <div id="intercambio_construccion" class="content">
+        <table id="activity-6-content">
+            <!-- Contenido insertado dinámicamente por JavaScript -->
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 7 -->
+<div id="activity-7" class="activity">
+    <div class="banner" onclick="toggleContent('obstaculo_historia')">
+        <div class="title">⚠️ Actividad 7: Mensaje del Cuartel ⏰ Tiempo: Variable <span id="activity-7-total-time">Variable según el nivel</span></div>
+        <div class="subtitle">Introducir un obstáculo en la narrativa para mantener el interés y la motivación.</div>
+    </div>
+    <div id="obstaculo_historia" class="content">
+        <table id="activity-7-content">
+            <!-- Contenido insertado dinámicamente por JavaScript -->
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 8 -->
+<div id="activity-8" class="activity">
+    <div class="banner" onclick="toggleContent('conclusion_reflexion')">
+        <div class="title">🏁 Actividad 8: Conclusión de la Historia y Reflexión ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Cierre de la misión y reflexión sobre lo aprendido durante la clase.</div>
+    </div>
+    <div id="conclusion_reflexion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (5 minutos):</strong> Reproduce la DIAPOSITIVA 25 y cierra la historia como cuenta cuentos. Realiza preguntas para reflexionar sobre lo aprendido.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                    "¡Genios del CODE SQUAD, lo logramos! Gracias a su increíble trabajo, la Reina Clara llegó sana y salva a su cocina. Ahora puede hornear sus deliciosos pasteles mágicos sin preocuparse por las trampas de vapor. La Reina Clara está muy feliz y les manda un gran agradecimiento por restaurar el camino mágico. ¡Qué equipo tan impresionante somos! Ahora, antes de despedirnos, reflexionemos un poco sobre lo que aprendimos hoy. 
+1. ¿Cómo los ayudó el código a resolver el reto? 
+2. ¿Qué mosaico les pareció más difícil de representar con las fichas? 
+3. ¿Por qué fue importante trabajar en equipo para superar los obstáculos?"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+
+               <!-- ............................................Aquí terminarán las actividades........................................... -->
+
+    </div>
+
+<script>
+    function toggleContent(id) {
+        var content = document.getElementById(id);
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            } else {
+            content.style.display = "block";
+        }
+    }
+
+    function updateContent() {
+        var time = document.getElementById("class-time").value;
+        var level = document.getElementById("class-level").value;
+        document.getElementById("selected-time").innerText = "Tiempo efectivo de clase: " + time + " minutos";
+        document.getElementById("selected-level").innerText = "Nivel: " + level;
+
+        var steps = {
+    "K1": {
+        "5.1": [
+            {
+                "step": 1,
+                "time": { "30": 1, "40": 1, "50": 1 },
+                "accion": "Reproduce la DIAPOSITIVA 8 y explica cómo crear el código para resolver el reto",
+                "dialogo": "¡CODE SQUAD! Para que la Reina Clara pueda llegar a su cocina sin activar las trampas de vapor, vamos a crear un código que restaure el camino de mosaicos mágicos. Vamos a usar las fichas para representar cada mosaico: Flor, Rombos y Corazón. Por ejemplo, la Flor se puede representar con una ficha recta, y ustedes pueden elegir cómo representar los otros mosaicos. Dibujen el mosaico, escriban '=' y luego dibujen la ficha que lo representará. ¡Es hora de ser creativos!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 2, "40": 2, "50": 2 },
+                "accion": "Reproduce la DIAPOSITIVA 9, distribuye los materiales y asegúrate de que todos tengan lo necesario.",
+                "dialogo": "Aquí tienen sus hojas y colores, CODE SQUAD. Ahora, dibujen los mosaicos (Flor, Rombos y Corazón) en sus hojas y asocien cada mosaico con la ficha que lo representa. ¡Prepárense para empezar a codificar el camino mágico de la Reina Clara!"
+            },
+            {
+                "step": 3,
+                "time": { "30": 5, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 10 y supervisa la creación del código en pares. Ayuda a los equipos mientras dibujan y asignan fichas de ruta.",
+                "dialogo": "¡Muy bien, CODE SQUAD! Ahora trabajen juntos para dibujar el código que ayudará a la Reina Clara. Recuerden: cada mosaico necesita su ficha. ¡Dibujen con cuidado y no olviden asignar la ficha correcta a cada mosaico!"
+            }
+        ],
+        "6": [
+            {
+                "step": 1,
+                "time": { "30": 2, "40": 2, "50": 2 },
+                "accion": "Reproduce la DIAPOSITIVA 17 y dirige a los Genios para que intercambien los códigos que hicieron.",
+                "dialogo": "¡Excelente trabajo, CODE SQUAD! Ahora, vamos a ayudar a la Reina Clara a organizar su camino. Voy a pasar a ver sus códigos para recogerlos y asignárselos a otro equipo. Cada equipo usará el código de otro para construir el camino mágico con las fichas de ruta. ¡Vamos a intercambiar los códigos y empezar a construir!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 7, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 18 y distribuye los códigos asignados para que cada equipo comience a construir.",
+                "dialogo": "¡Adelante, CODE SQUAD! Usen el código que recibieron para construir el camino de mosaicos mágicos con las fichas. Recuerden seguir el patrón que está en el código: Flor, Rombos, Corazón. ¡Vamos a ver cómo lo hacen y asegúrense de completar todo el camino para que la Reina Clara llegue a su cocina!"
+            }
+        ],
+        "7": [
+            {
+                "step": 1,
+                "time": { "30": 3, "40": 4, "50": 5 },
+                "accion": "Reproduce la DIAPOSITIVA 21 y explica el obstáculo a los Genios.",
+                "dialogo": "¡CODE SQUAD! ¡Alerta! Justo cuando la Reina Clara estaba a punto de llegar a su cocina, el viento volvió a soplar, desordenando parte del camino mágico que acabamos de construir. Además, las trampas de vapor están más activas que antes. ¡Oh no! Pero no se preocupen, el cuartel general nos ha enviado un código de rescate. Con este nuevo código, podemos volver a organizar el camino mágico para que la Reina Clara logre llegar a su cocina. ¡Manos a la obra, equipo CODE SQUAD!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 7, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 22 “Código de Rescate K1” y motiva a los Genios que sigan el nuevo código proyectado en la pantalla.",
+                "dialogo": "¡Genios del CODE SQUAD! Miren en la pantalla el 'Código de Rescate del Castillo'. Este código nos dice cómo volver a organizar los mosaicos mágicos. El patrón es Flor, Rombos, Corazón. Sigamos este código paso a paso para que la Reina Clara pueda llegar segura. ¡Vamos a resolverlo juntos, equipo!"
+            }
+        ]
+    },
+   "K2": {
+        "5.2": [
+            {
+                "step": 1,
+                "time": { "30": 1, "40": 1, "50": 1 },
+                "accion": "Reproduce la DIAPOSITIVA 11 y explica cómo crear el código para resolver el reto.",
+                "dialogo": "¡CODE SQUAD! Para que la Reina Clara pueda llegar a su cocina y hornear sus pasteles mágicos, debemos codificar un camino más largo con los mosaicos Flor, Rombos, Corazón y Copo de Nieve. Por ejemplo, el Copo de Nieve se puede representar con una ficha curva simple. Dibujen cada mosaico, escriban '=' y luego dibujen las fichas que lo representarán. ¡Es hora de restaurar el camino mágico!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 2, "40": 2, "50": 2 },
+                "accion": "Reproduce la DIAPOSITIVA 12, distribuye los materiales y asegúrate de que todos tengan lo necesario.",
+                "dialogo": "¡CODE SQUAD! Aquí tienen hojas y colores. Dibujen los mosaicos (Flor, Rombos, Corazón, Copo de Nieve) y asignen las fichas correspondientes. Luego, creen un código visual para el camino mágico. ¡Listos para la acción!"
+            },
+            {
+                "step": 3,
+                "time": { "30": 5, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 13 y supervisa la creación del código en pares. Ayuda a los equipos mientras dibujan y asignan fichas de ruta.",
+                "dialogo": "¡Excelente trabajo, CODE SQUAD! Dibujen su código visual uniendo los mosaicos en el orden correcto. Recuerden que cada mosaico debe tener las fichas que lo representan, y que necesitamos unir las dos partes del camino. ¡Vamos a hacerlo!"
+            }
+        ],
+        "6": [
+            {
+                "step": 1,
+                "time": { "30": 2, "40": 2, "50": 2 },
+                "accion": "Reproduce la DIAPOSITIVA 17 y dirige a los Genios para que intercambien los códigos que hicieron.",
+                "dialogo": "¡Excelente trabajo, CODE SQUAD! Ahora, vamos a ayudar a la Reina Clara a organizar su camino. Voy a pasar a ver sus códigos para recogerlos y asignárselos a otro equipo. Cada equipo usará el código de otro para construir el camino mágico con las fichas de ruta. ¡Vamos a intercambiar los códigos y empezar a construir!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 7, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 19 y distribuye los códigos asignados para que cada equipo comience a construir.",
+                "dialogo": "¡Es su turno, CODE SQUAD! Usen el código que recibieron para construir un camino más largo que incluya los mosaicos Flor, Rombos, Corazón y Copo de Nieve. Cada ficha representa un mosaico mágico, así que sigan el patrón del código y completen el camino para que la Reina Clara pueda llegar segura. ¡A trabajar, equipo!"
+            }
+        ],
+        "7": [
+            {
+                "step": 1,
+                "time": { "30": 3, "40": 4, "50": 5 },
+                "accion": "Reproduce la DIAPOSITIVA 21 y explica el obstáculo a los Genios.",
+                "dialogo": "¡CODE SQUAD! ¡Alerta! Justo cuando la Reina Clara estaba a punto de llegar a su cocina, el viento volvió a soplar, desordenando parte del camino mágico que acabamos de construir. Además, las trampas de vapor están más activas que antes. ¡Oh no! Pero no se preocupen, el cuartel general nos ha enviado un código de rescate. Con este nuevo código, podemos volver a organizar el camino mágico para que la Reina Clara logre llegar a su cocina. ¡Manos a la obra, equipo CODE SQUAD!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 7, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 23 “Código de Rescate K2” y motiva a los Genios que sigan el nuevo código proyectado en la pantalla.",
+                "dialogo": "¡CODE SQUAD, atención! En la pantalla tenemos el 'Código de Rescate del Castillo'. Este código nos muestra cómo volver a organizar los mosaicos mágicos: Flor, Rombos, Corazón, Copo de Nieve. Usen las fichas necesarias y sigan el patrón cuidadosamente para que la Reina Clara pueda llegar sin activar las trampas. ¡Adelante, equipo, podemos hacerlo!"
+            }
+        ]
+},
+    "K3": {
+        "5.3": [
+            {
+                "step": 1,
+                "time": { "30": 1, "40": 1, "50": 1 },
+                "accion": "Reproduce la DIAPOSITIVA 14 y explica cómo crear el código para resolver el reto.",
+                "dialogo": "¡CODE SQUAD! Para ayudar a la Reina Clara a llegar a su cocina, debemos crear un camino avanzado que incluya los mosaicos Flor, Rombos, Corazón, Copo de Nieve y Cruz. Por ejemplo, la Cruz se puede representar con una ficha de retorno. Dibujen cada mosaico, escriban '=' y dibujen las fichas que lo representarán. ¡Es hora de restaurar el camino completo del castillo!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 2, "40": 2, "50": 2 },
+                "accion": "Reproduce la DIAPOSITIVA 15, distribuye los materiales y asegúrate de que todos tengan lo necesario.",
+                "dialogo": "¡CODE SQUAD! Aquí tienen hojas y colores. Dibujen los mosaicos (Flor, Rombos, Corazón, Copo de Nieve, Cruz) y asignen las fichas necesarias. Luego, creen su código visual para el camino avanzado del castillo. ¡Vamos a trabajar juntos!"
+            },
+            {
+                "step": 3,
+                "time": { "30": 5, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 16 y supervisa la creación del código en pares. Ayuda a los equipos mientras dibujan y fichas de ruta.",
+                "dialogo": "¡Impresionante trabajo, CODE SQUAD! Ahora codifiquen su camino con cuidado, asignando las fichas a cada mosaico y verificando que el orden sea el correcto. ¡Juntos lograremos restaurar el camino mágico del castillo!"
+            }
+        ],
+        "6": [
+            {
+                "step": 1,
+                "time": { "30": 2, "40": 2, "50": 2 },
+                "accion": "Reproduce la DIAPOSITIVA 17 y dirige a los Genios para que intercambien los códigos que hicieron.",
+                "dialogo": "¡Excelente trabajo, CODE SQUAD! Ahora, vamos a ayudar a la Reina Clara a organizar su camino. Voy a pasar a ver sus códigos para recogerlos y asignárselos a otro equipo. Cada equipo usará el código de otro para construir el camino mágico con las fichas de ruta. ¡Vamos a intercambiar los códigos y empezar a construir!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 7, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 20 y distribuye los códigos asignados para que cada equipo comience a construir.",
+                "dialogo": "¡Gran trabajo, CODE SQUAD! Ahora construiremos un camino avanzado. Usen el código para completar el camino que incluye los mosaicos Flor, Rombos, Corazón, Copo de Nieve y Cruz. Cada ficha es clave para representar el mosaico mágico, así que sigan el patrón del código cuidadosamente. ¡Vamos a restaurar todo el camino mágico del Castillo de Cristal!"
+            }
+        ],
+        "7": [
+            {
+                "step": 1,
+                "time": { "30": 3, "40": 4, "50": 5 },
+                "accion": "Reproduce la DIAPOSITIVA 21 y explica el obstáculo a los Genios.",
+                "dialogo": "¡CODE SQUAD! ¡Alerta! Justo cuando la Reina Clara estaba a punto de llegar a su cocina, el viento volvió a soplar, desordenando parte del camino mágico que acabamos de construir. Además, las trampas de vapor están más activas que antes. ¡Oh no! Pero no se preocupen, el cuartel general nos ha enviado un código de rescate. Con este nuevo código, podemos volver a organizar el camino mágico para que la Reina Clara logre llegar a su cocina. ¡Manos a la obra, equipo CODE SQUAD!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 7, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 24 y motiva a los Genios a construir el nuevo código con bloques siguiendo el patrón proyectado.",
+                "dialogo": "¡Es hora de actuar, CODE SQUAD! En la pantalla tenemos el 'Código de Rescate del Castillo'. Este código es más avanzado e incluye mosaicos Flor, Rombos, Corazón, Copo de Nieve y Cruz. Cada ficha representa un mosaico mágico. Asegúrense de seguir el patrón y construir el camino completo para que la Reina Clara pueda llegar a su cocina sin problemas. ¡Vamos a restaurar la magia del castillo!"
+            }
+        ]
+    }
+};
+
+
+
+        // Mostrar u ocultar actividades según el nivel seleccionado
+        var activities = {
+            "activity-0": true,
+            "activity-1": true,
+            "activity-2": true,
+            "activity-3": true,
+            "activity-4": true,
+            "activity-5": true,
+            "activity-6": true,
+            "activity-7": steps[level]["7"].some(s => s.time[time] > 0),
+            "activity-8": true
+        };
+
+        Object.keys(activities).forEach(function(activityId) {
+            var activityElement = document.getElementById(activityId);
+            if (activities[activityId]) {
+                activityElement.style.display = "block";
+            } else {
+                activityElement.style.display = "none";
+            }
+        });
+
+        // Renderizar los pasos dinámicamente en las tablas de actividades 5, 6 y 7
+        renderActivitySteps("activity-5-content", steps[level]["5." + (level === "K1" ? 1 : level === "K2" ? 2 : 3)], time);
+        renderActivitySteps("activity-6-content", steps[level]["6"], time);
+        renderActivitySteps("activity-7-content", steps[level]["7"], time);
+
+        document.getElementById("activity-5-total-time").innerText = calculateTotalTime(steps[level]["5." + (level === "K1" ? 1 : level === "K2" ? 2 : 3)], time) + " minutos";
+        document.getElementById("activity-6-total-time").innerText = calculateTotalTime(steps[level]["6"], time) + " minutos";
+        document.getElementById("activity-7-total-time").innerText = calculateTotalTime(steps[level]["7"], time) + " minutos";
+    }
+
+    function renderActivitySteps(contentId, steps, time) {
+        var contentContainer = document.getElementById(contentId);
+        contentContainer.innerHTML = "";
+        steps.forEach(function(step) {
+            if (step.time[time] > 0) {
+                var row = document.createElement("tr");
+                var stepCell = document.createElement("td");
+                var dialogCell = document.createElement("td");
+
+                stepCell.innerHTML = "<strong>PASO " + step.step + " (" + step.time[time] + " minutos):</strong> " + step.accion;
+                dialogCell.innerHTML = "<strong>DIÁLOGO SUGERIDO:</strong> " + step.dialogo;
+
+                row.appendChild(stepCell);
+                row.appendChild(dialogCell);
+                contentContainer.appendChild(row);
+            }
+        });
+    }
+
+    function calculateTotalTime(steps, time) {
+        return steps.reduce((total, step) => total + step.time[time], 0);
+    }
+
+    updateContent();
+</script>
